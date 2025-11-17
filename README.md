@@ -1,226 +1,158 @@
 # MED-EASE-ML-DRIVEN-SYMPTOM-ANALYSIS-WITH-AN-EXPERT-DOCTOR-AND-DRUG-RECOMMENDATION-SYSTEM 
 UNDERGRAD: MAJOR - PROJECT
 
-This project is based on our research work presented in **IJIRT, Volume 11, Issue 2 (2024)**.  
-It focuses on predicting diseases from user-entered symptoms using machine learning, recommending appropriate medications, and enabling doctor appointment scheduling through an integrated digital system.
 
-The objective is to provide **fast, reliable, and automated healthcare assistance**, addressing the modern need for accurate diagnosis, expert guidance, and seamless patient–doctor interaction.
+## 1. Overview
 
-## 📘 Overview  
-MedEase is an intelligent healthcare system designed to analyze symptoms, identify potential diseases, recommend medicines, and connect patients with qualified doctors.
+MedEase is a healthcare decision-support system that identifies diseases based on symptoms, recommends suitable medications, and allows users to book appointments with doctors using an integrated system.
 
-The system aims to enhance accessibility and accuracy in healthcare delivery by combining:
+The platform assists users with:
+- Disease prediction
+- Medication suggestions
+- Viewing doctors
+- Booking appointments
+- Doctor notifications and scheduling
 
-- Machine Learning  
-- Basic Deep Learning concepts  
-- Web technologies  
-- Medical decision support  
+## 2. Proposed System
 
-### A Real-World Scenario Example  
-A patient experiencing symptoms (like abdominal pain) can input them into the system.  
-The model predicts possible diseases, suggests medications, and advises booking an appointment.  
-A doctor reviews the patient’s details, confirms the diagnosis, and provides treatment recommendations.
+The proposed system provides:
+- Accurate disease recognition based on symptoms
+- Primary and alternative medication recommendations
+- Doctor recommendations based on the predicted disease
+- Doctor appointment booking
+- Complete patient–doctor scheduling workflow
 
-This workflow demonstrates MedEase’s role as a **digital companion** for early diagnosis and care.
+### System Architecture Diagram
+![System Architecture](images/systemarchitecture.png)
 
+### E-R Diagram
+![E-R Diagram](images/e-rdiagram.png)
 
-## 🧠 Existing System  
-The traditional ML-based disease prediction systems:
+### Data Flow Diagram
+![Data Flow Diagram](images/dataflowdiagram.png)
 
-- Only handle structured symptom data  
-- Predict diseases but **do NOT** recommend medicines  
-- Lack doctor appointment workflows  
-- Provide limited diagnostic scope  
 
-MedEase overcomes these limitations by integrating:
 
-- Disease prediction  
-- Drug recommendations  
-- Doctor selection  
-- Appointment booking  
-- Complete patient–doctor workflow  
+## 3. System Modules
 
+### 3.1 Patient Module
+- Register with name, phone number, username, password
+- Login to the system
+- Enter symptoms
+- View predicted disease
+- Select doctor and book appointment
+- Receive scheduling notifications
 
+#### Patient Login Page
+![Patient Login](images/patientpage.png)
 
-## 📚 Literature Survey (Summary)
+#### Disease Detection Page
+![Disease Detection](images/disease detection.png)
 
-A number of previous works inspired MedEase, including:
+#### Output Page
+![Output Disease](images/output-disease.png)
 
-| Title | Method | Advantage | Drawback |
-|------|--------|-----------|----------|
-| Symptoms-Based Disease Prediction (2021) | ML Techniques | Improved accuracy | Requires large datasets |
-| ML Approach for Symptom Diagnosis (2022) | Naive Bayes + Rule-Based Reasoning | High accuracy | Limited scope |
-| Effective Diagnosis of Heart Disease (2015) | Bayes, SVM, Forecasting | Real-time diagnosis | Errors in user-generated data |
-| Doctor Recommendation via Collaborative Filtering (2018) | Similarity-based | Personalized recommendation | User review bias |
-| Medication Recommendation via EHR (2022) | ML + rule-based | Tailored medicine mapping | Data privacy concerns |
-| Medicine Recommendation System (2020) | Interpretable ML | Transparent decision making | Lower accuracy vs DL |
-| Dermatology ML Techniques (2015) | Unsupervised | Early intervention | Information overload |
-| CNN-based Doctor Recommendation (2020) | CNN | Diagnosis assistance | Misdiagnosis risk |
-| Alternative Medicine System (2023) | Cosine Similarity | Workload reduction | Technical complexity |
-| Online Doctor Appointment System (2018) | Android App | Easy appointments | Lacks ML features |
 
-These studies highlight challenges and gaps that MedEase resolves by integrating both **disease prediction** and **medical recommendations** into a single solution.
+### 3.2 Doctor Module
+- Login securely
+- View appointment requests
+- Approve or reschedule timings
+- Notify patients
 
+#### Doctor Login Page
+![Doctor Login](images/doctorlogin.png)
 
+#### Doctor Dashboard
+![Doctor Page](images/doctorpage.png)
 
-## 🔬 Proposed System  
-MedEase delivers:
 
-- ✔️ Accurate disease recognition from symptoms  
-- ✔️ Medication recommendations (primary + alternative)  
-- ✔️ Doctor selection based on the diagnosed condition  
-- ✔️ Appointment booking with real-time schedule updates  
-- ✔️ Comprehensive healthcare guidance  
 
-The system leverages **Machine Learning + Web Technologies** to bridge the gap between patients and healthcare professionals.
+### 3.3 Admin Module
+- Login to admin system
+- Manage users and appointments
 
+#### Admin Login Page
+![Admin Page](images/adminpage.png)
 
 
-## 🏗️ System Architecture  
 
-### **Hardware Requirements**
-- Updated Processor  
-- Minimum 4 GB RAM  
-- Minimum 100 GB Hard Disk  
+## 4. Methodology
 
-### **Software Requirements**
-- OS: Windows  
-- Backend: Python 3.6  
-- Frontend: HTML, CSS, JavaScript  
-- Web Framework: Flask  
-- Database: MySQL  
-- IDE: PyCharm / Sublime  
+Multiple Machine Learning models are used for disease prediction:
 
-### **Design Components**
-- E-R Diagram  
-- Data Flow Diagram (DFD)  
-- UML:  
-  - Use Case Diagram (Admin / Patient / Doctor)  
-  - Sequence Diagrams  
-  - State Diagrams  
+### Random Forest Classifier
+- Handles complex datasets efficiently  
+- Achieved 88% accuracy
 
+### Naive Bayes Classifier
+- Based on Bayes probability  
+- Achieved 86.17% accuracy
 
+### Decision Tree Classifier
+- Rule-based tree model  
+- Achieved 82.18% accuracy
 
-## ⚙️ Methodology  
+### Voting Classifier (Best Performance)
+- Combines Random Forest, Naive Bayes, and Decision Tree  
+- Achieved 95% accuracy  
 
-### **Machine Learning Models Used**
+### ML Evaluation Results
+![ML Evaluation](images/ml-evaluation.png)
+![ML Evaluation 1](images/ml-evaluation-1.png)
 
-#### 1️⃣ Random Forest Classifier  
-- Handles both classification and regression  
-- Achieved **88% accuracy**  
-- Uses majority voting across decision trees  
 
-#### 2️⃣ Naive Bayes Classifier  
-- Based on probabilistic Bayes theorem  
-- Achieved **86.17% accuracy**  
-- Performs well with high-dimensional symptom data  
 
-#### 3️⃣ Decision Tree Classifier  
-- Based on IF-ELSE rule-based tree  
-- Achieved **82.18% accuracy**
+## 5. Dataset Description
 
-#### 4️⃣ Voting Classifier (Best Performer)  
-- Combines: Decision Tree + Naive Bayes + Random Forest  
-- Uses Hard/Soft voting  
-- Achieved **95% overall accuracy**  
+Dataset Source (Kaggle):  
+https://www.kaggle.com/datasets/kaushil268/disease-prediction-using-machine-learning
 
-### **Evaluation Metrics**
-- Accuracy  
-- Recall  
-- Precision  
-- F1 Score  
+Dataset Details:
+- 4921 rows  
+- 133 symptoms  
+- Multi-class classification (disease prediction)
 
-(Visual ML evaluation graphs included in the PDF)
 
 
+## 6. Implementation Screens
 
-## 📊 Dataset Description  
-- **Source**: Disease Prediction Dataset (Kaggle)  
-- **Link**: https://www.kaggle.com/datasets/kaushil268/disease-prediction-using-machine-learning  
-- **Total Records**: 4921  
-- **Total Features (Symptoms)**: 133  
+### Symptom List Page
 
-Dataset was updated and modified to enhance accuracy and coverage.
+![Symptoms List](images/symptomslist.png)
 
+### Patient Interface
+![Patient Page](images/patientpage.png)
 
 
-## 🧩 Module Implementation  
 
-### 👤 Patient Module  
-- Register using phone number, name, unique username, and password  
-- Login to system  
-- Enter symptoms  
-- View predicted disease  
-- Select doctor & book appointment  
-- Receive schedule notification  
+## 7. Conclusion
 
-### 👨‍⚕️ Doctor Module  
-- Login to doctor dashboard  
-- View appointment requests  
-- Approve and schedule appointments  
-- Send notifications  
+MedEase is a comprehensive healthcare tool designed to streamline the diagnosis and consultation process.  
+It offers disease prediction, medication suggestions, and doctor appointment booking within one system.
 
-### 🛠 Admin Module  
-- Login  
-- Manage hospital data  
-- Oversee system workflows  
+The system enhances:
+- Diagnostic accuracy  
+- Healthcare accessibility  
+- Patient convenience  
 
-### 🖥 Screens / Pages Implemented  
-- Admin Login  
-- Patient Registration & Login  
-- Doctor Login  
-- Symptom Input Page  
-- Disease Detection Result Page  
-- Appointment Booking Page  
-- Updated Output Screens  
+# 8. Authors  
 
-
-
-## 📈 Results  
-
-The system showed:
-
-- High accuracy disease prediction  
-- Effective medicine recommendation mapping  
-- Smooth appointment booking workflow  
-- Clean UI/UX for patients & doctors  
-
-Voting Classifier ► **95% accuracy**  
-Random Forest ► **88% accuracy**  
-Naive Bayes ► **86% accuracy**
-
-
-
-## 🏁 Conclusion  
-
-MedEase is a powerful healthcare decision-support tool that automates:
-
-- Symptom analysis  
-- Disease prediction  
-- Doctor recommendations  
-- Appointment scheduling  
-- Medication suggestions  
-
-The system enhances efficiency, accessibility, and accuracy in healthcare services.
-
-### **Future Enhancements**
-- Improved ML models  
-- Expanded disease coverage  
-- NLP-based chatbot for symptom input  
-- Telemedicine integration  
-- Secure EHR integration  
-- Real-time doctor availability  
-- Stronger database & security compliance  
-
-
-# **Published Paper 
-
-
-# 🎓 Authors  
-**Umar Javeed Altaf**  
 **Ayesha Siddiq**  
 **Shamamah Firdous**  
+**Umar Javeed Altaf**  
 Dept. of CS & AI, MJCET, Osmania University  
+
+# 9. Publication
+
+This project is published in:
+
+**International Journal of Innovative Research in Technology (IJIRT)**  
+Volume 11, Issue 2, July 2024  
+Paper Title: *Med Ease: ML-Driven Symptom Analysis with Expert Doctor and Drug Recommendations*  
+Paper ID: IJIRT 166060  
+
+Full paper available at:  
+https://ijirt.org/paper-details/166060
 
 
 
